@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = 'http://localhost:4000'
+const URL = 'https://repoprovas-driven.herokuapp.com'
 //https://repoprovas-driven.herokuapp.com/
 //http://localhost:4000
 
