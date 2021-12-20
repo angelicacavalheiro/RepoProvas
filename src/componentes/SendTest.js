@@ -87,10 +87,10 @@ export default function SendTest() {
 
         <h1>Escolha um tipo de prova </h1>
         <h3 onClick={() => setTipo(1)} > Prova 1 </h3>
-        <h3 onClick={() => setTipo(1)} > Prova 2 </h3>
-        <h3 onClick={() => setTipo(1)} > Prova 3 </h3>
-        <h3 onClick={() => setTipo(1)} > Prova Final </h3>
-        <h3 onClick={() => setTipo(1)} > Segunda Chamada </h3>
+        <h3 onClick={() => setTipo(2)} > Prova 2 </h3>
+        <h3 onClick={() => setTipo(3)} > Prova 3 </h3>
+        <h3 onClick={() => setTipo(4)} > Prova Final </h3>
+        <h3 onClick={() => setTipo(5)} > Segunda Chamada </h3>
 
       </Container>
 
