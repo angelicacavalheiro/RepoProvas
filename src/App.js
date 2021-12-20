@@ -5,6 +5,8 @@ import Teachers from "./componentes/Teachers";
 import Semesters from "./componentes/Semesters";
 import Choice from "./componentes/Choice";
 import SendTest from "./componentes/SendTest";
+import Tests from "./componentes/Tests";
+import TestsBySubject from "./componentes/TestsBySubject";
 
 function App() {
   return (
@@ -26,6 +28,16 @@ function App() {
         <Route path="/semesters" exact>
           <Semesters />
         </ Route>
+
+        <Route path="/tests/:id" exact>
+          <Tests />
+        </ Route>
+
+        <Route path="/testsbysubject/:id" exact>
+          <TestsBySubject />
+        </ Route>
+
+        tests by discipline
 
         <Route path="/sendTest" exact>
           <SendTest />
