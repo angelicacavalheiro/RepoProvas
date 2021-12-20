@@ -76,7 +76,7 @@ export default function SendTest() {
         { subjects !== "" ?
           (subjects.map((subject) => {
             return (
-              <h3 key={subject.id} onClick={() => setSubjectId(subject.id)} >
+              <h3 key={subject.id} onClick={() => setSubjectId(subject.disciplinaId.id)} >
               {subject.disciplinaId.nome}
               </h3>
             )
