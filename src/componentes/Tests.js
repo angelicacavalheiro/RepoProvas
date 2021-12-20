@@ -28,10 +28,9 @@ export default function Tests() {
 				console.log(p)
 				return (p.prova.map((professor) => {
 					if (professor.professorId.id === Number(id)) {
-						console.log(professor)
 						p1.push(professor)
 						return setP1([...p1])
-					} return console.log(false);
+					} return false;
 				}))
 
 			} else if (p.nome === 'Prova 2') {
@@ -39,7 +38,7 @@ export default function Tests() {
 					if (professor.professorId.id === Number(id)) {
 						p2.push(professor)
 						return setP2([...p2])
-					} return console.log(false);
+					} return false;
 				}))
 
 			} else if (p.nome === 'Prova 3') {
@@ -47,7 +46,7 @@ export default function Tests() {
 					if (professor.professorId.id === Number(id)) {
 						p3.push(professor)
 						return setP3([...p3])
-					} return console.log(false);
+					} return false;
 				}))
 
 			} else if (p.nome === 'Prova Final') {
@@ -55,7 +54,7 @@ export default function Tests() {
 					if (professor.professorId.id === Number(id)) {
 						provaFinal.push(professor)
 						return setProvaFinal([...provaFinal])
-					} return console.log(false);
+					} return false;
 				}))
 
 			} else {
@@ -63,7 +62,7 @@ export default function Tests() {
 					if (professor.professorId.id === Number(id)) {
 						segundaCh.push(professor)
 						return setSegundaCh([...segundaCh])
-					} return console.log(false);
+					} return false;
 				}))
 			}
 		});
@@ -74,7 +73,6 @@ export default function Tests() {
 			<p>	Prova 1</p>
 			{p1 !== "" ?
 				(p1.map((test) => {
-					console.log(p1)
 					return (
 						<>
 							<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
