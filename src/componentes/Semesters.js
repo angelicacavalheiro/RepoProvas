@@ -20,14 +20,14 @@ export default function Semesters() {
 	return (
 		<Container>
 			{semestersFound !== "" ?
-				(semestersFound.map((semester) => {
+				(semestersFound.map((semester, index) => {
 					return (
-						<Semester key={semester.id} > {semester.name}
+						<Semester key={index} > {semester.name}
 								{semester.disciplinas !== "" ?
-								(semester.disciplinas.map((disciplina) => {
+								(semester.disciplinas.map((disciplina, index) => {
 									return (
-										<Link to={`/testsbysubject/${disciplina.id}`} style={{textDecoration: 'none'}}>
-												<Subject key={disciplina.id}> {disciplina.nome} </Subject>
+										<Link key={index} to={`/testsbysubject/${disciplina.id}`} style={{textDecoration: 'none'}}>
+												<Subject key={index}> {disciplina.nome} </Subject>
 										</Link>
 									)
 								}))

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
@@ -25,7 +26,6 @@ export default function Tests() {
 	function testFilter (allTests) {
 		allTests.map((p) => {
 			if (p.nome === 'Prova 1') {
-				console.log(p)
 				return (p.prova.map((professor) => {
 					if (professor.professorId.id === Number(id)) {
 						p1.push(professor)
@@ -72,14 +72,11 @@ export default function Tests() {
 		<Container>
 			<p>	Prova 1</p>
 			{p1 !== "" ?
-				(p1.map((test) => {
+				(p1.map((test, index) => {
 					return (
-						<>
-							<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-								<Test key={test.id}> {test.NomeId.nome} {test.diciplinaId.nome} </Test>
-							</a>
-
-						</>
+						<Test href={test.url} style={{color: 'black', textDecoration: 'none'}}
+						key={index}> {test.NomeId.nome} {test.diciplinaId.nome} <br/>
+						</Test>
 					)
 				}))
 				:
@@ -87,11 +84,11 @@ export default function Tests() {
 			}
 			<p>	Prova 2</p>
 			{p2 !== "" ?
-				(p2.map((test) => {
+				(p2.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.diciplinaId.nome} </Test>
-						</a>
+						<Test href={test.url} style={{color: 'black', textDecoration: 'none'}} key={index} >
+							{test.NomeId.nome} {test.diciplinaId.nome} <br/>
+						</Test>
 					)
 				}))
 				:
@@ -99,11 +96,11 @@ export default function Tests() {
 			}
 			<p>	Prova 3</p>
 			{p3 !== "" ?
-				(p3.map((test) => {
+				(p3.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.diciplinaId.nome} </Test>
-						</a>
+						<Test href={test.url} style={{color: 'black', textDecoration: 'none'}} key={index}  >
+							{test.NomeId.nome} {test.diciplinaId.nome} <br/>
+						</Test>
 					)
 				}))
 				:
@@ -111,11 +108,11 @@ export default function Tests() {
 			}
 			<p>	Prova Final</p>
 			{provaFinal !== "" ?
-				(provaFinal.map((test) => {
+				(provaFinal.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.diciplinaId.nome} </Test>
-						</a>
+						<Test href={test.url} style={{color: 'black', textDecoration: 'none'}} key={index}>
+							{test.NomeId.nome} {test.diciplinaId.nome} <br/>
+						</Test>
 					)
 				}))
 				:
@@ -123,11 +120,11 @@ export default function Tests() {
 			}
 			<p>	Segunda Chamada</p>
 			{segundaCh !== "" ?
-				(segundaCh.map((test) => {
+				(segundaCh.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.diciplinaId.nome} </Test>
-						</a>
+						<Test href={test.url} style={{color: 'black', textDecoration: 'none'}} key={index}>
+							{test.NomeId.nome} {test.diciplinaId.nome} <br/>
+						</Test>
 					)
 				}))
 				:
@@ -141,7 +138,7 @@ const Container = styled.div`
 	background: pink;
 
 `;
-const Test = styled.div`
+const Test = styled.a`
 	background: pink;
 	cursor: pointer;
 `;

@@ -72,14 +72,11 @@ export default function TestsBySubject() {
 		<Container>
 			<p>	Prova 1</p>
 			{p1 !== "" ?
-				(p1.map((test) => {
+				(p1.map((test, index) => {
 					return (
-						<>
-							<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-								<Test key={test.id}> {test.NomeId.nome} {test.professorId.nome} </Test>
-							</a>
-
-						</>
+						<Test key={index} href={test.url} style={{color: 'black', textDecoration: 'none'}}>
+							{test.NomeId.nome} {test.professorId.nome}  <br/>
+						</Test>
 					)
 				}))
 				:
@@ -87,11 +84,11 @@ export default function TestsBySubject() {
 			}
 			<p>	Prova 2</p>
 			{p2 !== "" ?
-				(p2.map((test) => {
+				(p2.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.professorId.nome} </Test>
-						</a>
+						<Test key={index} href={test.url} style={{color: 'black', textDecoration: 'none'}}>
+							{test.NomeId.nome} {test.professorId.nome}  <br/>
+						</Test>
 					)
 				}))
 				:
@@ -99,11 +96,11 @@ export default function TestsBySubject() {
 			}
 			<p>	Prova 3</p>
 			{p3 !== "" ?
-				(p3.map((test) => {
+				(p3.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.professorId.nome} </Test>
-						</a>
+						<Test key={index} href={test.url} style={{color: 'black', textDecoration: 'none'}}>
+							{test.NomeId.nome} {test.professorId.nome}  <br/>
+						</Test>
 					)
 				}))
 				:
@@ -111,11 +108,11 @@ export default function TestsBySubject() {
 			}
 			<p>	Prova Final</p>
 			{provaFinal !== "" ?
-				(provaFinal.map((test) => {
+				(provaFinal.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.professorId.nome} </Test>
-						</a>
+						<Test key={index} href={test.url} style={{color: 'black', textDecoration: 'none'}}>
+							{test.NomeId.nome} {test.professorId.nome}  <br/>
+						</Test>
 					)
 				}))
 				:
@@ -123,11 +120,12 @@ export default function TestsBySubject() {
 			}
 			<p>	Segunda Chamada</p>
 			{segundaCh !== "" ?
-				(segundaCh.map((test) => {
+				(segundaCh.map((test, index) => {
 					return (
-						<a href={test.url} style={{color: 'black', textDecoration: 'none'}}>
-							<Test key={test.id}> {test.NomeId.nome} {test.professorId.nome} </Test>
-						</a>
+						<Test key={index} href={test.url} style={{color: 'black', textDecoration: 'none'}}>
+							{test.NomeId.nome} {test.professorId.nome}  <br/>
+						</Test>
+
 					)
 				}))
 				:
@@ -141,7 +139,7 @@ const Container = styled.div`
 	background: pink;
 
 `;
-const Test = styled.div`
+const Test = styled.a`
 	background: pink;
 	cursor: pointer;
 `;

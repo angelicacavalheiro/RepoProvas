@@ -20,9 +20,9 @@ export default function Teachers() {
 	return (
 		<Container>
 			{teachersFound !== "" ?
-				(teachersFound.map((teacher) => {
+				(teachersFound.map((teacher, index) => {
 					return (
-						<Link to={`/tests/${teacher.id}`} style={{textDecoration: 'none'}}>
+						<Link key={teacher.id} to={`/tests/${teacher.id}`} style={{textDecoration: 'none'}}>
 							<Teacher key={teacher.id}> {teacher.nome} </Teacher>
 						</Link>
 					)
